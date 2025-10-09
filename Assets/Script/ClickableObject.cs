@@ -31,6 +31,7 @@ public class ClickableObject : MonoBehaviour
 
     protected virtual void HandleClick()
     {
-        
+        InventoryManager.Instance.AddToInventory(this);
+        gameObject.SetActive(false);
     }
 }
