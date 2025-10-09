@@ -13,6 +13,7 @@ public class PasteIntoHole : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("value of clipboard manager : " + ClipboardManager.clipboardText);
         if (!string.IsNullOrEmpty(ClipboardManager.clipboardText))
         {
             inputField.text = ClipboardManager.clipboardText;
