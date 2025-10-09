@@ -1,32 +1,38 @@
 using UnityEngine;
 
+[System.Serializable]
 public class ClickableObject : MonoBehaviour
 {
-    public int identifiant = 0;     // identifiant unique
-    public int cliquer = 0;         // 0 = non cliqué, 1 = cliqué
+    [Header("Informations de base")]
+    [SerializeField] private string id;
+    [SerializeField] private string objectName;
+    [TextArea][SerializeField] private string description;
 
-    void Start()
+    [Header("Images")]
+    [SerializeField] private Sprite worldSprite;     // Image utilisée dans le jeu
+    [SerializeField] private Sprite inventorySprite;
+
+    [Header("État")]
+    [SerializeField] private bool isClicked = false;
+
+    public string ID => id;
+    public string ObjectName => objectName;
+    public string Description => description;
+    public Sprite WorldSprite => worldSprite;
+    public Sprite InventorySprite => inventorySprite;
+    public bool IsClicked => isClicked;
+
+    public virtual void OnClick()
     {
-        // La variable est à 0 au début
-        cliquer = 0;
+        if (isClicked) return;
+
+        isClicked = true;
+        Debug.Log($"Objet {objectName} cliqué !");
+        HandleClick();
     }
 
-    void Update()
+    protected virtual void HandleClick()
     {
-        // Ici on pourrait faire autre chose si besoin
-    }
-
-    void OnMouseDown()
-    {
-        // Si l'objet n'a pas encore été cliqué
-        if (cliquer == 0)
-        {
-            cliquer = 1;
-            Debug.Log("Objet cliqué pour la première fois ! ID : " + identifiant);
-        }
-        else
-        {
-            Debug.Log("Déjà cliqué — action ignorée.");
-        }
+        
     }
 }
