@@ -8,8 +8,7 @@ public class ClickableObject : MonoBehaviour
     [SerializeField] private string objectName;
     [TextArea][SerializeField] private string description;
 
-    [Header("Images")]
-    [SerializeField] private Sprite worldSprite;     // Image utilisée dans le jeu
+    [Header("Image")]
     [SerializeField] private Sprite inventorySprite;
 
     [Header("État")]
@@ -18,7 +17,6 @@ public class ClickableObject : MonoBehaviour
     public string ID => id;
     public string ObjectName => objectName;
     public string Description => description;
-    public Sprite WorldSprite => worldSprite;
     public Sprite InventorySprite => inventorySprite;
     public bool IsClicked => isClicked;
 

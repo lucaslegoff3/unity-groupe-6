@@ -1001,7 +1001,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685518624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1076,7 +1076,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2216016538514026173, guid: bcfbffb6abf97ae4683bfc35b836716d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1097,7 +1097,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.46, y: 1.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.42724, y: 0.42724, z: 0.42724}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1116,7 +1116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: carte_postale
   objectName: Carte Postale
-  description: Cette carte postale provient de Phuket, une ville au Sud de la Thailand.
+  description: "Cette carte postale provient de Phuket, une ville du sud de la Tha\xEFlande,
+    capitale de la province de Phuket. En 2007, elle comptait 75 573 habitants."
+  inventorySprite: {fileID: -2216016538514026173, guid: bcfbffb6abf97ae4683bfc35b836716d, type: 3}
   isClicked: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
