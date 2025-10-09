@@ -103,12 +103,12 @@ TextureImporter:
       name: PostCard_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 89
+        x: 25
+        y: 39
         width: 460
-        height: 334
+        height: 423
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 66d34b2c78908fc458711c68384d54cb
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PostCard_0: -2216016538514026173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
