@@ -43,21 +43,17 @@ public class InventoryUI : MonoBehaviour
 
     private void AddItemToUI(ClickableObject newItem)
     {
-        // Trouve un slot libre
         foreach (Button slot in slots)
         {
             Image img = slot.GetComponent<Image>();
-            if (img != null && img.sprite == null)
+            if (img != null && img.sprite == null) // slot vide
             {
-                img.sprite = newItem.InventorySprite;
-                img.color = Color.white; // le rend visible
+                img.sprite = newItem.InventorySprite; // <-- c'est ici que l'image de ton objet est prise
+                img.color = Color.white; // rend l'image visible
                 slot.interactable = true;
-
-                Debug.Log($"Slot mis à jour avec {newItem.ObjectName}");
                 return;
             }
         }
-
-        Debug.LogWarning("Aucun slot libre disponible dans l’inventaire !");
     }
+
 }
