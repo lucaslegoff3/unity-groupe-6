@@ -26,12 +26,17 @@ public class ClickableObject : MonoBehaviour
 
         isClicked = true;
         Debug.Log($"Objet {objectName} cliqué !");
+
+        InventoryManager.Instance.AddToInventory(this);
+
+        if (InventoryUI.Instance != null)
+            InventoryUI.Instance.RefreshUI();
+
         HandleClick();
     }
 
     protected virtual void HandleClick()
     {
-        InventoryManager.Instance.AddToInventory(this);
         gameObject.SetActive(false);
     }
 }

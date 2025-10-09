@@ -4,56 +4,63 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    public static InventoryUI Instance;
+
     [Header("Références")]
-    [SerializeField] private Transform slotsParent; // Le parent qui contient les slots (panel d’inventaire)
+    [SerializeField] private Transform slotsParent;
 
     private List<Button> slots = new List<Button>();
 
     private void Awake()
     {
-        // Récupère tous les boutons enfants (slots)
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         foreach (Transform child in slotsParent)
         {
             Button slotButton = child.GetComponent<Button>();
             if (slotButton != null)
             {
                 slots.Add(slotButton);
-
-                // Initialise les slots vides
                 Image img = slotButton.GetComponent<Image>();
                 if (img != null)
                 {
                     img.sprite = null;
-                    img.color = new Color(1, 1, 1, 0); // rend l’image invisible si vide
+                    img.color = new Color(1, 1, 1, 0);
                 }
                 slotButton.interactable = false;
             }
         }
     }
 
-    private void OnEnable()
+    public void RefreshUI()
     {
-        InventoryManager.OnItemAdded += AddItemToUI;
-    }
+        if (InventoryManager.Instance == null) return;
 
-    private void OnDisable()
-    {
-        InventoryManager.OnItemAdded -= AddItemToUI;
-    }
-
-    private void AddItemToUI(ClickableObject newItem)
-    {
         foreach (Button slot in slots)
         {
             Image img = slot.GetComponent<Image>();
-            if (img != null && img.sprite == null) // slot vide
+            if (img != null)
             {
-                img.sprite = newItem.InventorySprite; // <-- c'est ici que l'image de ton objet est prise
-                img.color = Color.white; // rend l'image visible
-                slot.interactable = true;
-                return;
+                img.sprite = null;
+                img.color = new Color(1, 1, 1, 0);
+                slot.interactable = false;
+            }
+        }
+
+        for (int i = 0; i < InventoryManager.Instance.inventory.Count && i < slots.Count; i++)
+        {
+            Image img = slots[i].GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = InventoryManager.Instance.inventory[i].InventorySprite;
+                img.color = Color.white;
+                slots[i].interactable = true;
             }
         }
     }
-
 }
