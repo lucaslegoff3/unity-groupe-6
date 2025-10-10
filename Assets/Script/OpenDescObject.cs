@@ -1,61 +1,55 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OpenDescObject : MonoBehaviour
 {
-    [Header("Références")]
     public GameObject descObject;
     public Button openDescObject;
     public Button closeDescObject;
 
-    // Liste statique de tous les scripts actifs
-    private static List<OpenDescObject> allPanels = new List<OpenDescObject>();
+    [Header("Décalage optionnel (en pixels)")]
+    public Vector3 offset = new Vector3(0f, -80f, 0f); // tu peux ajuster depuis l'inspecteur
 
-    private void Awake()
-    {
-        // On enregistre chaque instance au démarrage
-        allPanels.Add(this);
-    }
-
-    private void OnDestroy()
-    {
-        // On la retire proprement si l’objet est détruit
-        allPanels.Remove(this);
-    }
+    private Canvas mainCanvas;
 
     private void Start()
     {
         openDescObject.onClick.AddListener(OpenDesc);
         closeDescObject.onClick.AddListener(CloseDesc);
 
-        // Par sécurité, le panel est fermé au départ
-        if (descObject != null)
-            descObject.SetActive(false);
+        mainCanvas = GetComponentInParent<Canvas>();
     }
 
     public void OpenDesc()
     {
-        if (descObject == null) return;
-
-        // Ferme tous les autres panneaux avant d'ouvrir celui-ci
-        foreach (var panel in allPanels)
+        // Ferme les autres panneaux
+        OpenDescObject[] allPanels = FindObjectsOfType<OpenDescObject>();
+        foreach (OpenDescObject panel in allPanels)
         {
-            if (panel != this && panel.descObject != null)
-            {
+            if (panel != this && panel.descObject.activeSelf)
                 panel.descObject.SetActive(false);
-            }
         }
 
-        // Active celui de ce slot
-        descObject.SetActive(true);
+        if (descObject != null)
+        {
+            if (mainCanvas != null)
+                descObject.transform.SetParent(mainCanvas.transform, true);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                mainCanvas.transform as RectTransform,
+                openDescObject.transform.position,
+                mainCanvas.worldCamera,
+                out Vector2 localPoint
+            );
+
+            descObject.GetComponent<RectTransform>().anchoredPosition = localPoint + (Vector2)offset;
+            descObject.transform.SetAsLastSibling();
+            descObject.SetActive(true);
+        }
     }
 
     public void CloseDesc()
     {
         if (descObject != null)
-        {
             descObject.SetActive(false);
-        }
     }
 }
