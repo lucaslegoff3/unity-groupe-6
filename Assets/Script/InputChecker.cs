@@ -1,26 +1,27 @@
+using TMPro;
 using UnityEngine;
-using TMPro; // Pour TextMeshPro
 
-public class InputChecker : MonoBehaviour
+public class InputValidator : MonoBehaviour
 {
-    [SerializeField] private TMP_InputField inputField; // Référence à ton champ de texte
-    [SerializeField] private string correctAnswer = "bonjour"; // La bonne réponse
-    [SerializeField] private TextMeshProUGUI feedbackText; // Un texte pour afficher le résultat (facultatif)
+    // Tableau pour stocker automatiquement tous les InputField ou TMP_InputField
+    [SerializeField] private TMP_InputField inputField;
+    [SerializeField] private string correctAnswer;
 
-    public void CheckAnswer()
+    // cette fonction va nous retourner un booleen selon si la réponse est correcte ou non 
+    // donc là ça nous retourne false or true selon si la réponse est la même que "correctAnswer"
+    // la valeur de correctAnswer va être précisée dans l'inspecteur
+    // maintenant il faut juste qu'on appelle cette fonctions
+    // on va faire un "manager" qui va appeler cette fonction
+    // ce manager ça va être un autre script
+    public bool CheckIfCorrect()
     {
-        // Récupère le texte entré et le nettoie (majuscules, espaces inutiles, etc.)
-        string userInput = inputField.text.Trim().ToLower();
-
-        if (userInput == correctAnswer.ToLower())
+        if (correctAnswer == inputField.text) 
         {
-            feedbackText.text = "? Bonne réponse !";
-            feedbackText.color = Color.green;
+            return true;
         }
         else
         {
-            feedbackText.text = "? Mauvaise réponse, essaie encore.";
-            feedbackText.color = Color.red;
+            return false;
         }
     }
 }
