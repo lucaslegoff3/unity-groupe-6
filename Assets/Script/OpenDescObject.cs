@@ -1,51 +1,60 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OpenDescObject : MonoBehaviour
 {
+    [Header("Références")]
     public GameObject descObject;
     public Button openDescObject;
     public Button closeDescObject;
 
-    [Header("Décalage optionnel (en pixels)")]
-    public Vector3 offset = new Vector3(0f, -80f, 0f); // tu peux ajuster depuis l'inspecteur
+    private static List<OpenDescObject> allPanels = new List<OpenDescObject>();
 
-    private Canvas mainCanvas;
+    private void Awake()
+    {
+        allPanels.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        allPanels.Remove(this);
+    }
 
     private void Start()
     {
         openDescObject.onClick.AddListener(OpenDesc);
         closeDescObject.onClick.AddListener(CloseDesc);
 
-        mainCanvas = GetComponentInParent<Canvas>();
+        if (descObject != null)
+            descObject.SetActive(false);
     }
 
     public void OpenDesc()
     {
-        // Ferme les autres panneaux
-        OpenDescObject[] allPanels = FindObjectsOfType<OpenDescObject>();
-        foreach (OpenDescObject panel in allPanels)
+        if (descObject == null) return;
+
+        foreach (var panel in allPanels)
         {
-            if (panel != this && panel.descObject.activeSelf)
+            if (panel != this && panel.descObject != null)
                 panel.descObject.SetActive(false);
         }
 
-        if (descObject != null)
-        {
-            if (mainCanvas != null)
-                descObject.transform.SetParent(mainCanvas.transform, true);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                mainCanvas.transform as RectTransform,
-                openDescObject.transform.position,
-                mainCanvas.worldCamera,
-                out Vector2 localPoint
-            );
+        descObject.SetActive(true);
+        descObject.transform.SetAsLastSibling();
 
-            descObject.GetComponent<RectTransform>().anchoredPosition = localPoint + (Vector2)offset;
-            descObject.transform.SetAsLastSibling();
-            descObject.SetActive(true);
+        var canvas = descObject.GetComponent<Canvas>();
+        if (canvas == null)
+        {
+            canvas = descObject.AddComponent<Canvas>();
+            descObject.AddComponent<GraphicRaycaster>();
         }
+
+        canvas.overrideSorting = true;
+        canvas.sortingOrder = 200;
     }
+
+
 
     public void CloseDesc()
     {
