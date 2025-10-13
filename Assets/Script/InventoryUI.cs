@@ -74,7 +74,7 @@ public class InventoryUI : MonoBehaviour
                 {
                  
                     Text titleText = panel.Find("Titre")?.GetComponent<Text>();
-                    Text descText = panel.Find("Description")?.GetComponent<Text>();
+                    TextMeshProUGUI descText = panel.Find("Description")?.GetComponent<TextMeshProUGUI>();
 
                     if (titleText) titleText.text = item.ObjectName;
                     if (descText) descText.text = item.Description;
