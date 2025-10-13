@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class OpenDescObject : MonoBehaviour
 {
     [Header("Références")]
     public GameObject descObject;
     public Button openDescObject;
-    public Button closeDescObject;
 
     private static List<OpenDescObject> allPanels = new List<OpenDescObject>();
 
@@ -24,7 +23,6 @@ public class OpenDescObject : MonoBehaviour
     private void Start()
     {
         openDescObject.onClick.AddListener(OpenDesc);
-        closeDescObject.onClick.AddListener(CloseDesc);
 
         if (descObject != null)
             descObject.SetActive(false);
@@ -53,7 +51,6 @@ public class OpenDescObject : MonoBehaviour
         canvas.overrideSorting = true;
         canvas.sortingOrder = 200;
     }
-
 
 
     public void CloseDesc()
