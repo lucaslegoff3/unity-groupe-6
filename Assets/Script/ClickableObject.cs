@@ -34,13 +34,21 @@ public class ClickableObject : MonoBehaviour
 
     private void Update()
     {
+        // Si l'inventaire est ouvert, annuler tout effet de hover
+        if (OpenInventaire.IsInventoryOpen)
+        {
+            return;
+        }
+
+        // Effet de survol normal si l’inventaire est fermé
         Vector3 targetScale = isHovered ? originalScale * hoverScale : originalScale;
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
     }
 
     private void OnMouseEnter()
     {
-        isHovered = true;
+        if (!OpenInventaire.IsInventoryOpen)
+            isHovered = true;
     }
 
     private void OnMouseExit()
@@ -48,14 +56,15 @@ public class ClickableObject : MonoBehaviour
         isHovered = false;
     }
 
-    private void OnMouseDown()
-    {
-        OnClick();
-    }
-
     public virtual void OnClick()
     {
         if (isClicked) return;
+
+        if (OpenInventaire.IsInventoryOpen)
+        {
+            Debug.Log("Inventaire ouvert — clic désactivé !");
+            return;
+        }
 
         isClicked = true;
         Debug.Log($"Objet {objectName} cliqué !");
