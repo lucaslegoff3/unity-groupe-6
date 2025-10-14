@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class introScript : MonoBehaviour
+public class IntroScript : MonoBehaviour
 {
     public Button playButton;
     public Button quitButton;
@@ -13,11 +13,6 @@ public class introScript : MonoBehaviour
     {
         playButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(QuitGame);
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void StartGame()

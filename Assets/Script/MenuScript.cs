@@ -17,11 +17,6 @@ public class MenuScript : MonoBehaviour
         restartButton.onClick.AddListener(RestartGame);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void StartGame()
     {
         Debug.Log("Demarrer le jeu...");

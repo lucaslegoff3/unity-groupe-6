@@ -11,8 +11,7 @@ public class ClickManager : MonoBehaviour
 
             if (hit.collider != null)
             {
-                var clickable = hit.collider.GetComponent<ClickableObject>();
-                if (clickable != null)
+                if (hit.collider.TryGetComponent<ClickableObject>(out var clickable))
                 {
                     clickable.OnClick();
                 }

@@ -13,7 +13,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI titleText;                     // Texte du titre (UI Text)
     [SerializeField] private TextMeshProUGUI descriptionText;    // Texte de description (TMP)
 
-    private List<Button> slots = new List<Button>();
+    private readonly List<Button> slots = new();
 
     private void Awake()
     {
@@ -26,13 +26,11 @@ public class InventoryUI : MonoBehaviour
 
         foreach (Transform child in slotsParent)
         {
-            Button slotButton = child.GetComponent<Button>();
-            if (slotButton != null)
+            if (child.TryGetComponent<Button>(out var slotButton))
             {
                 slots.Add(slotButton);
 
-                Image img = slotButton.GetComponent<Image>();
-                if (img != null)
+                if (slotButton.TryGetComponent<Image>(out var img))
                 {
                     img.sprite = null;
                     img.color = new Color(1, 1, 1, 0);
@@ -87,9 +85,6 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Affiche le panel global de description avec les infos de l'objet.
-    /// </summary>
     private void ShowGlobalDescription(ClickableObject item)
     {
         if (globalDescriptionPanel == null) return;
