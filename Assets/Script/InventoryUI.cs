@@ -8,7 +8,10 @@ public class InventoryUI : MonoBehaviour
     public static InventoryUI Instance;
 
     [Header("Références")]
-    [SerializeField] private Transform slotsParent;
+    [SerializeField] private Transform slotsParent;              // Parent des slots (boutons)
+    [SerializeField] private GameObject globalDescriptionPanel;  // Le panel global "Description"
+    [SerializeField] private TextMeshProUGUI titleText;                     // Texte du titre (UI Text)
+    [SerializeField] private TextMeshProUGUI descriptionText;    // Texte de description (TMP)
 
     private List<Button> slots = new List<Button>();
 
@@ -21,7 +24,6 @@ public class InventoryUI : MonoBehaviour
         }
         Instance = this;
 
-        // Récupère tous les slots (boutons)
         foreach (Transform child in slotsParent)
         {
             Button slotButton = child.GetComponent<Button>();
@@ -29,7 +31,6 @@ public class InventoryUI : MonoBehaviour
             {
                 slots.Add(slotButton);
 
-                // Réinitialiser visuellement le slot
                 Image img = slotButton.GetComponent<Image>();
                 if (img != null)
                 {
@@ -38,11 +39,6 @@ public class InventoryUI : MonoBehaviour
                 }
 
                 slotButton.interactable = false;
-
-                // Cache le panel interne
-                Transform panel = slotButton.transform.Find("Panel");
-                if (panel != null)
-                    panel.gameObject.SetActive(false);
             }
         }
     }
@@ -68,27 +64,13 @@ public class InventoryUI : MonoBehaviour
 
                 slot.interactable = true;
 
-                // Met à jour le panel interne
-                Transform panel = slot.transform.Find("Panel");
-                if (panel != null)
-                {
-                 
-                    Text titleText = panel.Find("Titre")?.GetComponent<Text>();
-                    TextMeshProUGUI descText = panel.Find("Description")?.GetComponent<TextMeshProUGUI>();
-
-                    if (titleText) titleText.text = item.ObjectName;
-                    if (descText) descText.text = item.Description;
-
-                    panel.gameObject.SetActive(false); // Caché par défaut
-                }
-
-                // Ajoute un listener pour ouvrir le panel au clic
+                // Supprime les anciens listeners pour éviter les doublons
                 slot.onClick.RemoveAllListeners();
+
+                // Ajoute un listener pour afficher le panel Description global
                 slot.onClick.AddListener(() =>
                 {
-                    Transform panel = slot.transform.Find("Panel");
-                    if (panel != null)
-                        panel.gameObject.SetActive(!panel.gameObject.activeSelf); // toggle affichage
+                    ShowGlobalDescription(item);
                 });
             }
             else
@@ -99,12 +81,35 @@ public class InventoryUI : MonoBehaviour
                     img.sprite = null;
                     img.color = new Color(1, 1, 1, 0);
                 }
-                slot.interactable = false;
 
-                Transform panel = slot.transform.Find("Panel");
-                if (panel != null)
-                    panel.gameObject.SetActive(false);
+                slot.interactable = false;
             }
         }
+    }
+
+    /// <summary>
+    /// Affiche le panel global de description avec les infos de l'objet.
+    /// </summary>
+    private void ShowGlobalDescription(ClickableObject item)
+    {
+        if (globalDescriptionPanel == null) return;
+
+        // Met à jour les textes
+        if (titleText != null)
+            titleText.text = item.ObjectName;
+
+        if (descriptionText != null)
+            descriptionText.text = item.Description;
+
+        // Affiche le panel
+        globalDescriptionPanel.SetActive(true);
+
+        // Le place au-dessus de tout dans la hiérarchie
+        globalDescriptionPanel.transform.SetAsLastSibling();
+    }
+    public void HideGlobalDescription()
+    {
+        if (globalDescriptionPanel != null)
+            globalDescriptionPanel.SetActive(false);
     }
 }
