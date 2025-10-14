@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CartePostalRecto_0: -8883495537774159625
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
