@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public static event Action<ClickableObject> OnItemAdded; 
 
     [Header("Inventaire actuel")]
-    public List<ClickableObject> inventory = new List<ClickableObject>();
+    public List<ClickableObject> inventory = new();
 
     private void Awake()
     {

@@ -8,7 +8,7 @@ public class OpenDescObject : MonoBehaviour
     public GameObject descObject;
     public Button openDescObject;
 
-    private static List<OpenDescObject> allPanels = new List<OpenDescObject>();
+    private static readonly List<OpenDescObject> allPanels = new();
 
     private void Awake()
     {
@@ -41,8 +41,7 @@ public class OpenDescObject : MonoBehaviour
         descObject.SetActive(true);
         descObject.transform.SetAsLastSibling();
 
-        var canvas = descObject.GetComponent<Canvas>();
-        if (canvas == null)
+        if (!descObject.TryGetComponent<Canvas>(out var canvas))
         {
             canvas = descObject.AddComponent<Canvas>();
             descObject.AddComponent<GraphicRaycaster>();

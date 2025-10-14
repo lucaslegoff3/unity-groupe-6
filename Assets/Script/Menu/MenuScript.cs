@@ -15,11 +15,6 @@ public class MenuScript : MonoBehaviour
         quitButton.onClick.AddListener(QuitGame);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void StartGame()
     {
         Debug.Log("Demarrer le jeu...");

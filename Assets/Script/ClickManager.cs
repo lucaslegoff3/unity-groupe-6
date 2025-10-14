@@ -10,7 +10,7 @@ public class ClickManager : MonoBehaviour
 
     void Start()
     {
-        // Récupère le GraphicRaycaster sur ton Canvas
+        // Rï¿½cupï¿½re le GraphicRaycaster sur ton Canvas
         raycaster = FindObjectOfType<GraphicRaycaster>();
         eventSystem = FindObjectOfType<EventSystem>();
     }
@@ -27,7 +27,7 @@ public class ClickManager : MonoBehaviour
             List<RaycastResult> results = new List<RaycastResult>();
             raycaster.Raycast(pointerData, results);
 
-            // Vérifie les éléments touchés
+            // Vï¿½rifie les ï¿½lï¿½ments touchï¿½s
             foreach (RaycastResult result in results)
             {
                 var clickable = result.gameObject.GetComponent<ClickableObject>();

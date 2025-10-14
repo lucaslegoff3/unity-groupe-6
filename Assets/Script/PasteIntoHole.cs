@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // si tu utilises TextMeshPro
+using TMPro;
 using UnityEngine.EventSystems;
 
 public class PasteIntoHole : MonoBehaviour, IPointerClickHandler
