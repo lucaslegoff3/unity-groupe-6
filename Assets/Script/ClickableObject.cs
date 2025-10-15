@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 [System.Serializable]
 public class ClickableObject : MonoBehaviour
@@ -8,6 +9,11 @@ public class ClickableObject : MonoBehaviour
     [SerializeField] private string id;
     [SerializeField] private string objectName;
     [TextArea][SerializeField] private string description;
+
+    [Header("Description principale")]
+    [SerializeField] private TextMeshProUGUI mainTitleText;
+    [SerializeField] private TextMeshProUGUI mainDescriptionText;
+    [TextArea][SerializeField] private string descriptionPiece;
 
     [Header("Image")]
     [SerializeField] private Sprite inventorySprite;
@@ -78,6 +84,12 @@ public class ClickableObject : MonoBehaviour
         {
             Debug.LogWarning("InventoryUI.Instance est détruit ou manquant, RefreshUI ignoré.");
         }
+
+        if (mainTitleText != null)
+            mainTitleText.text = ObjectName;
+
+        if (mainDescriptionText != null)
+            mainDescriptionText.text = descriptionPiece;
 
         HandleClick();
     }

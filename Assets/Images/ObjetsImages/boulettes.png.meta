@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: a20407fbe84fe8e4788e67d7997475ad
+guid: 59caf6e03555ce34684908fdc08ddfa5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2744731554527885446
-    second: telecommande_0
+      213: -687401327831925905
+    second: boulettes_0
+  - first:
+      213: 3475480998484246830
+    second: boulettes_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: telecommande_0
+      name: boulettes_0
       rect:
         serializedVersion: 2
-        x: 47
+        x: 19
         y: 18
-        width: 52
-        height: 112
+        width: 255
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 688b07f7ece371620800000000000000
-      internalID: 2744731554527885446
+      spriteID: f6b3274622cd576f0800000000000000
+      internalID: -687401327831925905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boulettes_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 228
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e210642ed836b3030800000000000000
+      internalID: 3475480998484246830
       vertices: []
       indices: 
       edges: []

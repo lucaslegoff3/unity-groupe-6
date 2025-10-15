@@ -450,6 +450,11 @@ MonoBehaviour:
   description: "A front page story about fake celebrity accounts. Headline: \u201CBrad
     Pitt \u2014 \"Doesn\u2019t have <link=\"any social media accounts\"><color=blue>any
     social media accounts</color></link>. Proof that the real actor isn\u2019t online."
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: "A front page story about fake celebrity accounts. Headline:
+    \u201CBrad Pitt \u2014 \"Doesn\u2019t have any social media accounts. Proof that
+    the real actor isn\u2019t online."
   inventorySprite: {fileID: 184037376981741520, guid: 1ef822d36d837284795064650962b517, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -875,6 +880,151 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50519811}
+  m_CullTransparentMesh: 1
+--- !u!1 &79500711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 79500712}
+  - component: {fileID: 79500716}
+  - component: {fileID: 79500715}
+  - component: {fileID: 79500714}
+  - component: {fileID: 79500713}
+  m_Layer: 5
+  m_Name: Boulette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &79500712
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79500711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447662024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -674, y: -456}
+  m_SizeDelta: {x: 40, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &79500713
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79500711}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &79500714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79500711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9723c35bea6f7724eab80072553785a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: paper_balls
+  objectName: crumbled paper balls
+  description: Oh, a sugar-free drink? Is our <link="poem"><color=blue>poem</link></color>.
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: paper balls, to see what's on them
+  inventorySprite: {fileID: 8346893768663140741, guid: bb0434da08751fb47866c6ac9c3d34ad, type: 3}
+  isClicked: 0
+  hoverScale: 1.1
+  scaleSpeed: 8
+--- !u!114 &79500715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79500711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -687401327831925905, guid: 59caf6e03555ce34684908fdc08ddfa5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &79500716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79500711}
   m_CullTransparentMesh: 1
 --- !u!1 &86412558
 GameObject:
@@ -1973,6 +2123,11 @@ MonoBehaviour:
   description: "A medical certificate from a certain doctor <link=\"Lara Klett\"><color=blue>Lara
     Klett</color></link>, but the names and signatures seem to have been added in
     a different handwriting\u2026 Strange, isn\u2019t it?"
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: "A medical certificate from a certain doctor Lara Klett, but
+    the names and signatures seem to have been added in a different handwriting\u2026
+    Strange, isn\u2019t it?"
   inventorySprite: {fileID: 2518984126180981932, guid: c864bc6b401177b4d9b40b5340f74b2e, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -2027,10 +2182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65cd27328be25d4b8121ede1b466ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Suspicious certificate
-  description: "A medical certificate from a certain doctor Lara Klett, but the names
-    and signatures seem to have been added in a different handwriting\u2026 Strange,
-    isn\u2019t it?"
 --- !u!1 &159663518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2256,152 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159663518}
+  m_CullTransparentMesh: 1
+--- !u!1 &183550011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183550012}
+  - component: {fileID: 183550016}
+  - component: {fileID: 183550015}
+  - component: {fileID: 183550014}
+  - component: {fileID: 183550013}
+  m_Layer: 5
+  m_Name: Canette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &183550012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183550011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447662024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -285, y: -428}
+  m_SizeDelta: {x: 70, y: 45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &183550013
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183550011}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &183550014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183550011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9723c35bea6f7724eab80072553785a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: soda_can
+  objectName: Soda Can
+  description: Oh, a sugar-free drink? Is our <link="hacker"><color=blue>hacker</link></color>
+    watching his weight...?
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: Oh, a sugar-free drink? Is our hacker watching his weight...?
+  inventorySprite: {fileID: 8346893768663140741, guid: bb0434da08751fb47866c6ac9c3d34ad, type: 3}
+  isClicked: 0
+  hoverScale: 1.1
+  scaleSpeed: 8
+--- !u!114 &183550015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183550011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 8346893768663140741, guid: bb0434da08751fb47866c6ac9c3d34ad, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &183550016
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183550011}
   m_CullTransparentMesh: 1
 --- !u!1 &194478417
 GameObject:
@@ -2419,6 +2716,9 @@ MonoBehaviour:
   description: This brain scan shows the evidence that the patient is suffering from
     <link="Brain cancer"><color=blue>brain cancer</color></link>. Used by the scammer
     to justify fake illness.
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: Whoa! A brain radio, now we're getting serious.
   inventorySprite: {fileID: 8432247141150106085, guid: 19e525db11222af4a9384e5ec49c98c4, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -3210,6 +3510,10 @@ MonoBehaviour:
   description: 'A worn-out blue credit card. Numbers are scratched, but still readable
     : <link="1234.5678.9012"><color=blue>1234.5678.9012</color></link>. Could this
     be the card used for the transfers?'
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: A worn-out blue credit card. Numbers are scratched, but still
+    readable :1234.5678.9012. Could this be the card used for the transfers?
   inventorySprite: {fileID: -6163831570859631797, guid: 22a70c4df813e5b4091ae88f9b8e2541, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -3353,6 +3657,9 @@ MonoBehaviour:
   objectName: Phone
   description: A message notification from the famous actor <link="Brad Pitt"><color=blue>Brad
     Pitt</color></link>.
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: A phone! I should find some information about its owner.
   inventorySprite: {fileID: -7240947852090347526, guid: 1e697a9b654777848af3305e023c8b31, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -3729,7 +4036,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: faux_post_it
   objectName: Post IT
-  description: 
+  description: A sticky note with a string of numbers. It looks like a password.
+    <link="1234"><color=blue>1234</link></color>, not very difficult.
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: A sticky note with a string of numbers. It looks like a bad password.
   inventorySprite: {fileID: 8344241915755607118, guid: 5c73817bc6b7fdb49837300bd294b4d7, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -4511,6 +4822,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &522059585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522059586}
+  - component: {fileID: 522059588}
+  - component: {fileID: 522059587}
+  m_Layer: 5
+  m_Name: conserve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &522059586
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522059585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447662024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 152, y: -107}
+  m_SizeDelta: {x: 32.6742, y: 35.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &522059587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522059585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -7449180019180793852, guid: ea95ebd1283fc5840b0863b3add9a66b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &522059588
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522059585}
+  m_CullTransparentMesh: 1
 --- !u!1 &525541950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4954,6 +5340,8 @@ GameObject:
   - component: {fileID: 568583910}
   - component: {fileID: 568583912}
   - component: {fileID: 568583911}
+  - component: {fileID: 568583913}
+  - component: {fileID: 568583914}
   m_Layer: 5
   m_Name: horloge
   m_TagString: Untagged
@@ -5018,6 +5406,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568583909}
   m_CullTransparentMesh: 1
+--- !u!114 &568583913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568583909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc88971d01414b4087f7d06d5777f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: Clock
+  description: She's not even on time...
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+--- !u!61 &568583914
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568583909}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &568631829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6020,6 +6470,10 @@ MonoBehaviour:
     details \u2014 IP address (<link=\"597.210.77.165\"><color=blue>597.210.77.165</color></link>),
     network name (A.DL.75), Wi-Fi code (<link=\"IloveMyDog75\"><color=blue>IloveMyDog75</color></link>)
     \u2014 but only the IP address matters. "
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: A black Wi-Fi box with various information on it. I need to take
+    a closer look.
   inventorySprite: {fileID: -4078719387986338260, guid: 7f76bb7fca9f51f4daaceb1ed7faed9d, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -6061,81 +6515,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851977409}
-  m_CullTransparentMesh: 1
---- !u!1 &863598417
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 863598418}
-  - component: {fileID: 863598420}
-  - component: {fileID: 863598419}
-  m_Layer: 5
-  m_Name: canette
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &863598418
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863598417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1447662024}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -274.6, y: -413.7}
-  m_SizeDelta: {x: 50, y: 40}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &863598419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863598417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 8346893768663140741, guid: bb0434da08751fb47866c6ac9c3d34ad, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &863598420
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863598417}
   m_CullTransparentMesh: 1
 --- !u!1 &870679545
 GameObject:
@@ -6364,6 +6743,9 @@ MonoBehaviour:
   objectName: Cash
   description: "A pile of cash wrapped in a rubber band. It\u2019s what the scammer
     was really after : <link=\"funds\"><color=blue>funds</color></link>. "
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: What a large sum of money, this is all very suspicious.
   inventorySprite: {fileID: 3886443268029631212, guid: 29311bd04c98b004d96111c3fda6e1e1, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -7555,6 +7937,11 @@ MonoBehaviour:
   description: "This post card is from <link=\"Phuket\"><color=blue>Phuket</color></link>,
     a city at the South of Thailand. In 2007, it counted 75 573 inhabitants.The handwriting
     on the back reads: \u201CWish you were here.\u201D"
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: "This post card is from Phuket, a city at the South of Thailand.
+    In 2007, it counted 75 573 inhabitants.The handwriting on the back reads: \u201CWish
+    you were here.\u201D"
   inventorySprite: {fileID: 5802767625931893303, guid: a9539daac736718448cbc3663240c13e, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -8612,9 +8999,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ticket
   objectName: ticket
-  description: "Cette carte postale provient de <link=\"Phuket\">Phuket</link>, une
-    ville du sud de la Tha\xEFlande, capitale de la province de Phuket. En 2007,
-    elle comptait 75 573 habitants."
+  description: "Here, a carnival ticket. At the \u201C<link=\"court jester\"><color=blue>court
+    jester</color></link>,\u201D I don't know."
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: "Here, a carnival ticket. At the \u201Ccourt jester,\u201D I
+    don't know."
   inventorySprite: {fileID: -6467537029916428044, guid: 718389c53b1d7e240a7ae134d1132b81, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -9090,7 +9480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -489, y: 392}
+  m_AnchoredPosition: {x: -267, y: 392}
   m_SizeDelta: {x: 130, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292082510
@@ -9233,6 +9623,9 @@ MonoBehaviour:
   objectName: Poster
   description: A poster promoting awareness about <link="online fraud"><color=blue>online
     fraud</color></link>.
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: A poster promoting awareness about online fraud
   inventorySprite: {fileID: -3011681440091969271, guid: bb484b1ac282e93429e8bb4a0509ae7f, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -9287,8 +9680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65cd27328be25d4b8121ede1b466ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: Poster
-  description: A poster promoting awareness about online fraud.
 --- !u!1 &1306809757
 GameObject:
   m_ObjectHideFlags: 0
@@ -9649,6 +10040,10 @@ MonoBehaviour:
   objectName: Post-it Note
   description: "A small post-it stuck to the computer. Written in blue ink: <link=\"bradepitte@gmail.com\"><color=blue>bradepitte@gmail.com</color></link>
     Looks like the scammer\u2019s contact address."
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: "A small post-it stuck to the computer. Written in blue ink:
+    bradepitte@gmail.com. Looks like the scammer\u2019s contact address."
   inventorySprite: {fileID: -3241431823743005476, guid: 637158da099ca2840aad5421041d7659, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -10641,8 +11036,8 @@ RectTransform:
   - {fileID: 364485506}
   - {fileID: 245226916}
   - {fileID: 222230176}
-  - {fileID: 863598418}
   - {fileID: 1638933625}
+  - {fileID: 522059586}
   - {fileID: 357362614}
   - {fileID: 1455394425}
   - {fileID: 1791948667}
@@ -10650,10 +11045,13 @@ RectTransform:
   - {fileID: 525541951}
   - {fileID: 1467044022}
   - {fileID: 159663519}
-  - {fileID: 1956786239}
   - {fileID: 1656179825}
   - {fileID: 870679546}
+  - {fileID: 183550012}
   - {fileID: 873431470}
+  - {fileID: 79500712}
+  - {fileID: 1572503982}
+  - {fileID: 1971342194}
   - {fileID: 993010263}
   - {fileID: 660226093}
   - {fileID: 1946835577}
@@ -10808,6 +11206,10 @@ MonoBehaviour:
     <link="Anne"><color=blue>Anne</color></link> Deneuchatel, born on 06/10/1971,
     she is <link="Age"><color=blue>51</color></link> years old and lives in <link="Anne"><color=blue>Paris</color></link>
     (75).'
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: It looks like the victim's card, which allows me to learn more
+    about her.
   inventorySprite: {fileID: -7723539561351526450, guid: 091f431c22de058418e9d17842c44d6d, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -11928,6 +12330,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546751371}
+  m_CullTransparentMesh: 1
+--- !u!1 &1572503981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572503982}
+  - component: {fileID: 1572503984}
+  - component: {fileID: 1572503983}
+  m_Layer: 5
+  m_Name: Canette (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1572503982
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572503981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447662024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -639, y: -477.7}
+  m_SizeDelta: {x: 40, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1572503983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572503981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -687401327831925905, guid: 59caf6e03555ce34684908fdc08ddfa5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1572503984
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572503981}
   m_CullTransparentMesh: 1
 --- !u!1 &1577791322
 GameObject:
@@ -13385,9 +13862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27b81f879e26d4408af48b91647bd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTitleText: {fileID: 2040633003}
-  mainDescriptionText: {fileID: 1231433215}
-  descriptionPanel: {fileID: 1718828457}
 --- !u!224 &1738957673 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1700923974823075973, guid: a59404747950fd4479eb8ef384217bc3, type: 3}
@@ -15252,7 +15726,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946835576}
   m_CullTransparentMesh: 1
---- !u!1 &1956786238
+--- !u!1 &1971342193
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15260,9 +15734,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1956786239}
-  - component: {fileID: 1956786241}
-  - component: {fileID: 1956786240}
+  - component: {fileID: 1971342194}
+  - component: {fileID: 1971342198}
+  - component: {fileID: 1971342197}
+  - component: {fileID: 1971342196}
+  - component: {fileID: 1971342195}
   m_Layer: 5
   m_Name: Telecommande
   m_TagString: Untagged
@@ -15270,13 +15746,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1956786239
+--- !u!224 &1971342194
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956786238}
+  m_GameObject: {fileID: 1971342193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -15286,16 +15762,86 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 870.8, y: -343.7}
-  m_SizeDelta: {x: 83.1716, y: 37.95}
+  m_AnchoredPosition: {x: 879, y: -351}
+  m_SizeDelta: {x: 106.8557, y: 50.628}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1956786240
+--- !u!61 &1971342195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971342193}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1971342196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956786238}
+  m_GameObject: {fileID: 1971342193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9723c35bea6f7724eab80072553785a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: telecommande
+  objectName: Remote control
+  description: A remote control without a TV? Can it <link="control"><color=blue>control</link></color>
+    something else?
+  mainTitleText: {fileID: 2040633003}
+  mainDescriptionText: {fileID: 1231433215}
+  descriptionPiece: "But where\u2019s the TV??? Now\u2019s not the time to watch
+    your show, Commander."
+  inventorySprite: {fileID: 2744731554527885446, guid: a20407fbe84fe8e4788e67d7997475ad, type: 3}
+  isClicked: 0
+  hoverScale: 1.1
+  scaleSpeed: 8
+--- !u!114 &1971342197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971342193}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -15309,7 +15855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2744731554527885446, guid: a20407fbe84fe8e4788e67d7997475ad, type: 3}
+  m_Sprite: {fileID: 6728203877073985568, guid: 86d0f8e95349bcf489d827002e0c5f1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15319,13 +15865,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1956786241
+--- !u!222 &1971342198
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956786238}
+  m_GameObject: {fileID: 1971342193}
   m_CullTransparentMesh: 1
 --- !u!224 &1980833572 stripped
 RectTransform:
