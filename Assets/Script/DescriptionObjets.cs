@@ -1,9 +1,8 @@
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 [System.Serializable]
-public class DesriptionObjets : MonoBehaviour
+public class DescriptionObjets : MonoBehaviour
 {
     [Header("Informations de base")]
     [SerializeField] private string objectName;
@@ -13,17 +12,19 @@ public class DesriptionObjets : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mainTitleText;
     [SerializeField] private TextMeshProUGUI mainDescriptionText;
 
-    public string ObjectName => objectName;
-    public string Description => description;
+    private void OnMouseDown()
+    {
+        OnClick();
+    }
 
     public virtual void OnClick()
     {
-        Debug.Log($"Objet {objectName} cliqué !");
-
         if (mainTitleText != null)
-            mainTitleText.text = ObjectName;
+            mainTitleText.text = objectName;
 
         if (mainDescriptionText != null)
             mainDescriptionText.text = description;
+
+        Debug.Log($"Description mise à jour pour {objectName}");
     }
 }
