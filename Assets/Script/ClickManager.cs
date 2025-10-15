@@ -10,13 +10,18 @@ public class ClickManager : MonoBehaviour
 
     void Start()
     {
-        // R�cup�re le GraphicRaycaster sur ton Canvas
-        raycaster = FindObjectOfType<GraphicRaycaster>();
-        eventSystem = FindObjectOfType<EventSystem>();
+        AssignReferences();
     }
 
     void Update()
     {
+        if (raycaster == null || eventSystem == null)
+        {
+            AssignReferences();
+            if (raycaster == null || eventSystem == null)
+                return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             PointerEventData pointerData = new PointerEventData(eventSystem)
@@ -27,7 +32,6 @@ public class ClickManager : MonoBehaviour
             List<RaycastResult> results = new List<RaycastResult>();
             raycaster.Raycast(pointerData, results);
 
-            // V�rifie les �l�ments touch�s
             foreach (RaycastResult result in results)
             {
                 var clickable = result.gameObject.GetComponent<ClickableObject>();
@@ -38,5 +42,11 @@ public class ClickManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void AssignReferences()
+    {
+        raycaster = FindObjectOfType<GraphicRaycaster>();
+        eventSystem = FindObjectOfType<EventSystem>();
     }
 }

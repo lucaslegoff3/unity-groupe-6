@@ -71,8 +71,15 @@ public class ClickableObject : MonoBehaviour
 
         InventoryManager.Instance.AddToInventory(this);
 
-        if (InventoryUI.Instance != null)
+        if (InventoryUI.Instance != null && InventoryUI.Instance.gameObject != null)
+        {
             InventoryUI.Instance.RefreshUI();
+        }
+        else
+        {
+            Debug.LogWarning("InventoryUI.Instance est détruit ou manquant, RefreshUI ignoré.");
+        }
+
 
         HandleClick();
     }

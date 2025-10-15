@@ -8,10 +8,10 @@ public class InventoryUI : MonoBehaviour
     public static InventoryUI Instance;
 
     [Header("Références")]
-    [SerializeField] private Transform slotsParent;              // Parent des slots (boutons)
-    [SerializeField] private GameObject globalDescriptionPanel;  // Le panel global "Description"
-    [SerializeField] private TextMeshProUGUI titleText;                     // Texte du titre (UI Text)
-    [SerializeField] private TextMeshProUGUI descriptionText;    // Texte de description (TMP)
+    [SerializeField] private Transform slotsParent;
+    [SerializeField] private GameObject globalDescriptionPanel;
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI descriptionText;
 
     private readonly List<Button> slots = new();
 
@@ -62,10 +62,8 @@ public class InventoryUI : MonoBehaviour
 
                 slot.interactable = true;
 
-                // Supprime les anciens listeners pour éviter les doublons
                 slot.onClick.RemoveAllListeners();
 
-                // Ajoute un listener pour afficher le panel Description global
                 slot.onClick.AddListener(() =>
                 {
                     ShowGlobalDescription(item);
@@ -73,7 +71,6 @@ public class InventoryUI : MonoBehaviour
             }
             else
             {
-                // Slot vide
                 if (img != null)
                 {
                     img.sprite = null;
@@ -89,17 +86,14 @@ public class InventoryUI : MonoBehaviour
     {
         if (globalDescriptionPanel == null) return;
 
-        // Met à jour les textes
         if (titleText != null)
             titleText.text = item.ObjectName;
 
         if (descriptionText != null)
             descriptionText.text = item.Description;
 
-        // Affiche le panel
         globalDescriptionPanel.SetActive(true);
 
-        // Le place au-dessus de tout dans la hiérarchie
         globalDescriptionPanel.transform.SetAsLastSibling();
     }
     public void HideGlobalDescription()
@@ -107,4 +101,11 @@ public class InventoryUI : MonoBehaviour
         if (globalDescriptionPanel != null)
             globalDescriptionPanel.SetActive(false);
     }
+
+    private void OnDestroy()
+{
+    if (Instance == this)
+        Instance = null;
+}
+
 }
