@@ -10,10 +10,12 @@ public class InputValidator : MonoBehaviour
     {
         if (correctAnswer == inputField.text) 
         {
+            Debug.Log("Good " + correctAnswer);
             return true;
         }
         else
         {
+            Debug.Log("False " + correctAnswer);
             return false;
         }
     }

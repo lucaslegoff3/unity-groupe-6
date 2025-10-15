@@ -448,9 +448,8 @@ MonoBehaviour:
   id: affiche
   objectName: Newspaper
   description: "A front page story about fake celebrity accounts. Headline: \u201CBrad
-    Pitt \u2014 \"Doesn\u2019t have<link=\"any social media accounts\"><color=blue>
-    any social media accounts.\u201D</color></link> Proof that the real actor isn\u2019t
-    online."
+    Pitt \u2014 \"Doesn\u2019t have <link=\"any social media accounts\"><color=blue>any
+    social media accounts</color></link>. Proof that the real actor isn\u2019t online."
   inventorySprite: {fileID: 184037376981741520, guid: 1ef822d36d837284795064650962b517, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -1970,9 +1969,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: certificat
   objectName: Suspicious certificate
-  description: "A medical certificate from a certain doctor <link=\"Lara Klett\"><color=blue>\u201CLara
-    Klett\u201D</color></link>, but the names and signatures seem to have been added
-    in a different handwriting\u2026 Strange, isn\u2019t it?"
+  description: "A medical certificate from a certain doctor <link=\"Lara Klett\"><color=blue>Lara
+    Klett</color></link>, but the names and signatures seem to have been added in
+    a different handwriting\u2026 Strange, isn\u2019t it?"
   inventorySprite: {fileID: 2518984126180981932, guid: c864bc6b401177b4d9b40b5340f74b2e, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -3192,7 +3191,7 @@ MonoBehaviour:
   id: carte_bancaire
   objectName: Credit card
   description: 'A worn-out blue credit card. Numbers are scratched, but still readable
-    : <link="1234 5678 9012"><color=blue>1234 5678 9012</color></link>. Could this
+    : <link="1234.5678.9012"><color=blue>1234.5678.9012</color></link>. Could this
     be the card used for the transfers?'
   inventorySprite: {fileID: -6163831570859631797, guid: 22a70c4df813e5b4091ae88f9b8e2541, type: 3}
   isClicked: 0
@@ -3335,8 +3334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: telephone
   objectName: Phone
-  description: "A message notification from the famous actor <link=\"Bradd Pitt\"><color=blue>\u201CBrad
-    Pitt\u201D</color></link>."
+  description: A message notification from the famous actor <link="Brad Pitt"><color=blue>Brad
+    Pitt</color></link>.
   inventorySprite: {fileID: -7240947852090347526, guid: 1e697a9b654777848af3305e023c8b31, type: 3}
   isClicked: 0
   hoverScale: 1.1
@@ -9464,7 +9463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: post_it
   objectName: Post-it Note
-  description: "A small post-it stuck to the computer. Written in blue ink: <link=\"bradepitte@gmail.com\"><color=blue>\u201Cbradepitte@gmail.com\u201D</color></link>
+  description: "A small post-it stuck to the computer. Written in blue ink: <link=\"bradepitte@gmail.com\"><color=blue>bradepitte@gmail.com</color></link>
     Looks like the scammer\u2019s contact address."
   inventorySprite: {fileID: -3241431823743005476, guid: 637158da099ca2840aad5421041d7659, type: 3}
   isClicked: 0

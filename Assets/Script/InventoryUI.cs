@@ -22,8 +22,14 @@ public class InventoryUI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Instance = this;
+        else
+        {
+            Instance = this;
+        }
+    }
 
+    private void Start()
+    {
         foreach (Transform child in slotsParent)
         {
             if (child.TryGetComponent<Button>(out var slotButton))
@@ -101,11 +107,5 @@ public class InventoryUI : MonoBehaviour
         if (globalDescriptionPanel != null)
             globalDescriptionPanel.SetActive(false);
     }
-
-    private void OnDestroy()
-{
-    if (Instance == this)
-        Instance = null;
-}
 
 }

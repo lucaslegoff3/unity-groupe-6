@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,6 +14,10 @@ public class ClickableObject : MonoBehaviour
 
     [Header("État")]
     [SerializeField] private bool isClicked = false;
+
+    [Header("Description")]
+    [SerializeField] private TextMeshProUGUI mainTitleText;
+    [SerializeField] private TextMeshProUGUI mainDescriptionText;
 
     [Header("Effet de survol")]
     [SerializeField] private float hoverScale = 1.1f;
@@ -34,13 +39,11 @@ public class ClickableObject : MonoBehaviour
 
     private void Update()
     {
-        // Si l'inventaire est ouvert, annuler tout effet de hover
         if (OpenInventaire.IsInventoryOpen)
         {
             return;
         }
 
-        // Effet de survol normal si l’inventaire est fermé
         Vector3 targetScale = isHovered ? originalScale * hoverScale : originalScale;
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
     }
@@ -80,9 +83,23 @@ public class ClickableObject : MonoBehaviour
             Debug.LogWarning("InventoryUI.Instance est détruit ou manquant, RefreshUI ignoré.");
         }
 
-
+        ShowMainDescription();
         HandleClick();
     }
+    private void ShowMainDescription()
+    {
+        if (mainTitleText == null || mainDescriptionText == null)
+        {
+            Debug.LogWarning($"[ClickableObject] Description principale non configurée pour {name}");
+            return;
+        }
+
+        mainTitleText.text = objectName;
+        mainDescriptionText.text = description;
+
+        Debug.Log($"[ClickableObject] Description mise à jour : {objectName}");
+    }
+
 
     protected virtual void HandleClick()
     {
