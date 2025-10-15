@@ -20,7 +20,6 @@ public class MenuPauseScript : MonoBehaviour
         rulesButton.onClick.AddListener(OpenRules);
         closeRulesButton.onClick.AddListener(CloseRules);
 
-        // Cache le panel des règles au démarrage
         if (rulesPanel != null)
             rulesPanel.SetActive(false);
     }

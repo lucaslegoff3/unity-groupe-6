@@ -3,25 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneAutoLoader : MonoBehaviour
 {
-    public float autoLoadDelay;
-    private float timer;
+    [Header("Configuration")]
 
-    private void Start()
-    {
-    }
+    [Tooltip("Temps avant de charger automatiquement la scène (en secondes).")]
+    public float autoLoadDelay = 60f;
+
+    private float timer = 0f;
+    private bool hasLoaded = false;
 
     private void Update()
     {
+        timer += Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             LoadNextScene();
         }
 
-        timer = 0f;
-        autoLoadDelay = 60f;
-
-        timer += Time.deltaTime;
-        if (timer >= autoLoadDelay)
+        if (timer >= autoLoadDelay && !hasLoaded)
         {
             LoadNextScene();
         }
@@ -29,9 +28,10 @@ public class SceneAutoLoader : MonoBehaviour
 
     private void LoadNextScene()
     {
-        enabled = false;
+        if (hasLoaded) return;
+        hasLoaded = true;
 
-        Debug.Log($"Chargement de la scène : Game");
+        Debug.Log(" Chargement de la scène : Game");
         SceneManager.LoadScene("Game");
     }
 }
