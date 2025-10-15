@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TextValidatorManager : MonoBehaviour
 {
@@ -26,5 +27,6 @@ public class TextValidatorManager : MonoBehaviour
     public void GoodSoluce()
     {
         Debug.Log("GOOD SOLUCE");
+        SceneManager.LoadScene("VideoVictoire");
     }
 }
