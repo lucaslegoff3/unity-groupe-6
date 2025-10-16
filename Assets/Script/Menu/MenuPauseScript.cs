@@ -13,6 +13,13 @@ public class MenuPauseScript : MonoBehaviour
     [Header("Panels")]
     public GameObject rulesPanel;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         restartButton.onClick.AddListener(RestartGame);
@@ -27,12 +34,14 @@ public class MenuPauseScript : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Réinitialiser le jeu...");
+        audioManager.PlaySFX(audioManager.click);
         SceneManager.LoadScene("Intro");
     }
 
     public void QuitGame()
     {
         Debug.Log("Quitter le jeu...");
+        audioManager.PlaySFX(audioManager.click);
         Application.Quit();
     }
 
@@ -40,13 +49,19 @@ public class MenuPauseScript : MonoBehaviour
     {
         Debug.Log("Ouverture du panel des règles");
         if (rulesPanel != null)
+        {
+            audioManager.PlaySFX(audioManager.click);
             rulesPanel.SetActive(true);
+        }
     }
 
     public void CloseRules()
     {
         Debug.Log("Fermeture du panel des règles");
         if (rulesPanel != null)
+        {
+            audioManager.PlaySFX(audioManager.click);
             rulesPanel.SetActive(false);
+        }
     }
 }

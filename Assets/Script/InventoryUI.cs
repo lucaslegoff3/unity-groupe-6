@@ -16,8 +16,11 @@ public class InventoryUI : MonoBehaviour
     private readonly List<Button> slots = new();
     private int selectedSlotIndex = -1;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -112,6 +115,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         selectedSlotIndex = index;
+        audioManager.PlaySFX(audioManager.click);
         ShowGlobalDescription(item);
     }
 

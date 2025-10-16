@@ -29,14 +29,20 @@ public class OpenMenu : MonoBehaviour
     {
         Debug.Log("Ouverture du panel menu");
         if (menuPanel != null)
+        {
             menuPanel.SetActive(true);
             audioManager.PlaySFX(audioManager.click);
+        }
+            
     }
 
     public void ClosePanelMenu()
     {
         Debug.Log("Fermeture du panel menu");
         if (menuPanel != null)
+        {
+            audioManager.PlaySFX(audioManager.click);
             menuPanel.SetActive(false);
+        }
     }
 }
