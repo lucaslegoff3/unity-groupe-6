@@ -44,9 +44,9 @@ public class ClickManager : MonoBehaviour
         }
     }
 
-    private void AssignReferences()
-    {
-        raycaster = FindObjectOfType<GraphicRaycaster>();
-        eventSystem = FindObjectOfType<EventSystem>();
-    }
+    //private void AssignReferences()
+    //{
+        //raycaster = FindObjectOfType<GraphicRaycaster>();
+        //eventSystem = FindObjectOfType<EventSystem>();
+    //}
 }
