@@ -2,15 +2,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ClickableText : MonoBehaviour, IPointerClickHandler
 {
     [Header("Composants")]
     public TextMeshProUGUI text;
-    public GameObject copiedMessage; // Un Text ou une UI pour afficher "Texte copié !"
+    public GameObject copiedMessage;
 
-    [Header("Paramètres")]
-    public float messageDuration = 2f; // Durée d'affichage du message
+    [Header("Notification")]
+    public GameObject panelNotification;
+    [SerializeField] private TextMeshProUGUI texteNotification;
+
+    [SerializeField] private float delay = 4f;
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -19,8 +30,8 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler
         {
             cam = text.canvas.worldCamera;
         }
+        audioManager.PlaySFX(audioManager.click);
 
-        // Trouver si on clique sur un lien
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(text, eventData.position, cam);
 
         if (linkIndex != -1)
@@ -28,22 +39,25 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler
             TMP_LinkInfo linkInfo = text.textInfo.linkInfo[linkIndex];
             string copiedText = linkInfo.GetLinkText();
 
-            // Copie dans le presse-papiers
             ClipboardManager.clipboardText = copiedText;
-            Debug.Log("Texte copié : " + copiedText);
 
-            // Afficher message visuel
-            if (copiedMessage != null)
+            if (panelNotification != null)
             {
-                StartCoroutine(ShowCopiedMessage());
+                panelNotification.SetActive(true);
+
+                if (texteNotification != null)
+                    texteNotification.text ="\"" + copiedText + "\" has been copied.";
+
+                StartCoroutine(HideNotificationAfterDelay());
             }
+
+            Debug.Log("Texte copié : " + copiedText);
         }
     }
 
-    private IEnumerator ShowCopiedMessage()
+    private IEnumerator HideNotificationAfterDelay()
     {
-        copiedMessage.SetActive(true);
-        yield return new WaitForSeconds(messageDuration);
-        copiedMessage.SetActive(false);
+        yield return new WaitForSeconds(delay);
+        panelNotification.SetActive(false);
     }
 }

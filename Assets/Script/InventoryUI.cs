@@ -14,6 +14,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
 
     private readonly List<Button> slots = new();
+    private int selectedSlotIndex = -1;
 
     private void Awake()
     {
@@ -22,10 +23,7 @@ public class InventoryUI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
 
     private void Start()
@@ -67,12 +65,12 @@ public class InventoryUI : MonoBehaviour
                 }
 
                 slot.interactable = true;
-
                 slot.onClick.RemoveAllListeners();
 
+                int index = i;
                 slot.onClick.AddListener(() =>
                 {
-                    ShowGlobalDescription(item);
+                    OnSlotClicked(index, item);
                 });
             }
             else
@@ -86,6 +84,35 @@ public class InventoryUI : MonoBehaviour
                 slot.interactable = false;
             }
         }
+
+        if (InventoryManager.Instance.inventory.Count > 0)
+        {
+            ClickableObject firstItem = InventoryManager.Instance.inventory[0];
+            OnSlotClicked(0, firstItem);
+        }
+    }
+
+    private void OnSlotClicked(int index, ClickableObject item)
+    {
+        if (selectedSlotIndex != -1 && selectedSlotIndex < slots.Count)
+        {
+            var prevSlot = slots[selectedSlotIndex];
+            var prevItem = InventoryManager.Instance.inventory[selectedSlotIndex];
+            var prevImg = prevSlot.GetComponent<Image>();
+            if (prevImg != null && prevItem != null)
+            {
+                prevImg.sprite = prevItem.InventorySprite;
+            }
+        }
+
+        var currentImg = slots[index].GetComponent<Image>();
+        if (currentImg != null && item.SelectSprite != null)
+        {
+            currentImg.sprite = item.SelectSprite;
+        }
+
+        selectedSlotIndex = index;
+        ShowGlobalDescription(item);
     }
 
     private void ShowGlobalDescription(ClickableObject item)
@@ -99,13 +126,12 @@ public class InventoryUI : MonoBehaviour
             descriptionText.text = item.Description;
 
         globalDescriptionPanel.SetActive(true);
-
         globalDescriptionPanel.transform.SetAsLastSibling();
     }
+
     public void HideGlobalDescription()
     {
         if (globalDescriptionPanel != null)
             globalDescriptionPanel.SetActive(false);
     }
-
 }

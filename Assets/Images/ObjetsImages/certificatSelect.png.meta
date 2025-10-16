@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 59caf6e03555ce34684908fdc08ddfa5
+guid: 0ac8dce8925e35a4cb08b8ba65e11207
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -687401327831925905
-    second: boulettes_0
-  - first:
-      213: 3475480998484246830
-    second: boulettes_1
+      213: -8271562400510081068
+    second: certificatSelect_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,35 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boulettes_0
+      name: certificatSelect_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 18
-        width: 255
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f6b3274622cd576f0800000000000000
-      internalID: -687401327831925905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boulettes_1
-      rect:
-        serializedVersion: 2
-        x: 402
+        x: 0
         y: 0
-        width: 228
-        height: 198
+        width: 174
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e210642ed836b3030800000000000000
-      internalID: 3475480998484246830
+      spriteID: 4d78e1442d1853d80800000000000000
+      internalID: -8271562400510081068
       vertices: []
       indices: 
       edges: []

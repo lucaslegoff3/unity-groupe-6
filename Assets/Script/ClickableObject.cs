@@ -17,6 +17,10 @@ public class ClickableObject : MonoBehaviour
 
     [Header("Image")]
     [SerializeField] private Sprite inventorySprite;
+    [SerializeField] private Sprite selectSprite;
+
+    [Header("Audio clip")]
+    public AudioClip sound;
 
     [Header("État")]
     [SerializeField] private bool isClicked = false;
@@ -32,10 +36,14 @@ public class ClickableObject : MonoBehaviour
     public string ObjectName => objectName;
     public string Description => description;
     public Sprite InventorySprite => inventorySprite;
+    public Sprite SelectSprite => selectSprite;
     public bool IsClicked => isClicked;
+
+    AudioManager audioManager;
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         originalScale = transform.localScale;
     }
 
@@ -72,6 +80,7 @@ public class ClickableObject : MonoBehaviour
         }
 
         isClicked = true;
+        audioManager.PlaySFX(sound);
         Debug.Log($"Objet {objectName} cliqué !");
 
         InventoryManager.Instance.AddToInventory(this);
