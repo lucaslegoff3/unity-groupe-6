@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 [System.Serializable]
 public class ClickableObject : MonoBehaviour

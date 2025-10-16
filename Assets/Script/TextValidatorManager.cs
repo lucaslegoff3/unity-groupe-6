@@ -9,6 +9,13 @@ public class TextValidatorManager : MonoBehaviour
     public GameObject panelEchec;
 
     public List<InputValidator> inputValidatorList = new();
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     public void CheckSoluce()
     {
         for (int i = 0; i < inputValidatorList.Count; i++)
@@ -27,7 +34,11 @@ public class TextValidatorManager : MonoBehaviour
         Debug.Log("WRONG SOLUCE");
         Debug.Log("Ouverture du panel menu");
         if (panelEchec != null)
+        {
+            audioManager.PlaySFX(audioManager.tampon);
             panelEchec.SetActive(true);
+        }
+        
     }
 
     public void GoodSoluce()

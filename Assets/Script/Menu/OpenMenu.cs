@@ -12,6 +12,13 @@ public class OpenMenu : MonoBehaviour
     [Header("Panels")]
     public GameObject menuPanel;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         openMenuButton.onClick.AddListener(OpenPanelMenu);
@@ -23,6 +30,7 @@ public class OpenMenu : MonoBehaviour
         Debug.Log("Ouverture du panel menu");
         if (menuPanel != null)
             menuPanel.SetActive(true);
+            audioManager.PlaySFX(audioManager.click);
     }
 
     public void ClosePanelMenu()

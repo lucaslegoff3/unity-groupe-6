@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio clip")]
     public AudioClip background;
     public AudioClip click;
+    public AudioClip tampon;
 
     private void Start()
     {
