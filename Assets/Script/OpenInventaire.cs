@@ -10,9 +10,11 @@ public class OpenInventaire : MonoBehaviour
     public GameObject Inventaire;
     public Button openPanel;
     public Button closePanel;
+    AudioManager audioManager;
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
@@ -23,13 +25,17 @@ public class OpenInventaire : MonoBehaviour
         closePanel.onClick.AddListener(ClosePanel);
 
         if (Inventaire != null)
+        {
             Inventaire.SetActive(false);
+        }
+            
     }
 
     public void OpenPanel()
     {
         if (Inventaire != null)
         {
+            audioManager.PlaySFX(audioManager.click);
             Inventaire.SetActive(true);
             IsInventoryOpen = true;
         }
@@ -39,6 +45,7 @@ public class OpenInventaire : MonoBehaviour
     {
         if (Inventaire != null)
         {
+            audioManager.PlaySFX(audioManager.click);
             Inventaire.SetActive(false);
             IsInventoryOpen = false;
         }

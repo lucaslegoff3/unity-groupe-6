@@ -18,7 +18,6 @@ public class InventoryManager : MonoBehaviour
             return;
         }
         Instance = this;
-        //DontDestroyOnLoad(gameObject);
     }
 
     public void AddToInventory(ClickableObject obj)
