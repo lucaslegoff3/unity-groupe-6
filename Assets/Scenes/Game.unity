@@ -869,7 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: paper_balls
   objectName: crumbled paper balls
-  description: Oh, a sugar-free drink? Is our <link="poem"><color=blue>poem</link></color>.
+  description: Maybe the hacker is a poet <link="poem"><color=blue>poem</link></color>.
   mainTitleText: {fileID: 2040633003}
   mainDescriptionText: {fileID: 1231433215}
   descriptionPiece: paper balls, to see what's on them
@@ -8084,7 +8084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The evience gathered indicates that the victim, was the victim of a                                     
+  m_text: 'The evidence gathered indicates that the victim, was the victim of a                                     
     .
 
     The perpetrator impersonated brad pitt a famous actor, in order to obtain                            
@@ -12339,7 +12339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1474803621
 RectTransform:
   m_ObjectHideFlags: 0
