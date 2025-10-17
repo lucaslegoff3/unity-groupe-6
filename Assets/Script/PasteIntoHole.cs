@@ -13,6 +13,7 @@ public class PasteIntoHole : MonoBehaviour, IPointerClickHandler
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         inputField = GetComponent<TMP_InputField>();
+        inputField.readOnly = true;
     }
 
     public void OnPointerClick(PointerEventData eventData)
